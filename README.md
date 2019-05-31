@@ -41,3 +41,65 @@ $pipelineService->run('my payload');
 
 
 ```
+
+## Scenario
+
+```php
+
+
+    public function indexController()
+    {
+    
+        $databaseRecord = "test";
+        
+        if($databaseRecord == "test")
+        {
+            // do some logic
+        
+        }
+        
+        if($databaseRecord == "foo")
+        {
+            // do some logic
+        
+        }        
+        
+        if($databaseRecord == "bar")
+        {
+            // do some logic
+        
+        }  
+        
+        
+        ...
+    
+    }
+
+
+```
+
+
+```php
+
+
+    public function indexController()
+    {
+    
+        $databaseRecord = "test";
+        
+        $pipelineService = new OilService(new Pipeline());
+        
+        $pipelineService->add(new Test());
+        
+        $pipelineService->add(new Foo());
+        
+        $pipelineService->add(new Bar());
+        
+        $pipelineService->run($databaseRecord);
+        
+        ...
+    
+    }
+
+
+```

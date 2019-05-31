@@ -1,9 +1,8 @@
-# oil
 
-this package helps you to manage you'r logic
-
-
-
+## installation
+```php
+composer require ah-b/oil
+```
 ## Usage
 
 

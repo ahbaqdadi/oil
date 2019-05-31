@@ -1,0 +1,21 @@
+{
+    "name": "ah-b/oil",
+    "description": "flexible package for manage complex domain logic",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Amir",
+            "email": "ahbaqdadi@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Oil\\": "src/"
+        }
+    },
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^7.5"
+    }
+}

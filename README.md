@@ -1,7 +1,7 @@
 
 ## installation
 ```php
-composer require ah-b/oil
+composer require ah-b/oil "0.1"
 ```
 ## Usage
 

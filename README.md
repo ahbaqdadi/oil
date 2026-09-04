@@ -1,8 +1,23 @@
 
-## installation
+## Requirements
+
+- PHP 8.3 or later for the current development branch
+
+## Installation
+
 ```php
 composer require ah-b/oil "0.1"
 ```
+
+## Development
+
+Install dependencies and run the test suite:
+
+```bash
+composer install
+composer test
+```
+
 ## Usage
 
 

@@ -17,7 +17,7 @@ class PipeLineTest extends \PHPUnit\Framework\TestCase
      */
     private $pipeline;
 
-    public function setUp()
+    protected function setUp(): void
     {
         $this->pipeline = new \Oil\Patterns\PipeLine();
     }
@@ -28,7 +28,7 @@ class PipeLineTest extends \PHPUnit\Framework\TestCase
 
         $testclass = new testPipeline();
 
-        $this->assertEquals($pipeline->start('test',[$testclass]),'test');
+        $this->assertSame('test', $pipeline->start('test', [$testclass]));
 
     }
 }

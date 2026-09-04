@@ -9,15 +9,20 @@ class MediatorTest extends \PHPUnit\Framework\TestCase
      */
     private $mediator;
 
-    public function setUp()
+    protected function setUp(): void
     {
         $this->mediator = new \Oil\Patterns\Mediator();
     }
 
     public function test_is_mediator_work()
     {
-        $mediator = $this->mediator;
+        $receivedPayload = null;
 
-        $this->assertEquals($mediator->start(['payload'],[function($payload){ echo $payload; }]),null);
+        $result = $this->mediator->start('payload', [function ($payload) use (&$receivedPayload) {
+            $receivedPayload = $payload;
+        }]);
+
+        $this->assertNull($result);
+        $this->assertSame('payload', $receivedPayload);
     }
 }

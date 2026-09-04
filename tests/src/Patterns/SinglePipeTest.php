@@ -17,7 +17,7 @@ class SinglePipeTest extends \PHPUnit\Framework\TestCase
      */
     private $singlePip;
 
-    public function setUp()
+    protected function setUp(): void
     {
         $this->singlePip = new \Oil\Patterns\SinglePipe();
     }
@@ -29,7 +29,7 @@ class SinglePipeTest extends \PHPUnit\Framework\TestCase
 
         $testclass = new testSinglePipe();
 
-        $this->assertEquals($singlePipe->start('test',[$testclass]),'test');
+        $this->assertSame('test', $singlePipe->start('test', [$testclass]));
 
     }
 }

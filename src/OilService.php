@@ -39,8 +39,10 @@ class OilService
      */
     public function run($payload)
     {
-        $result = $this->engine->start($payload,$this->arrayStream->getArray());
-        $this->arrayStream->clearArray();
-        return $result;
+        try {
+            return $this->engine->start($payload,$this->arrayStream->getArray());
+        } finally {
+            $this->arrayStream->clearArray();
+        }
     }
 }

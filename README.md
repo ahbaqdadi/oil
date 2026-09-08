@@ -32,6 +32,9 @@ $pipelineService->run('my payload');
 
 ```
 
+Stages are consumed by the next `run()` call. They are cleared whether the run
+returns successfully or throws, so add the stages again for each execution.
+
 
 ```php
 class Test

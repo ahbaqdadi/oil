@@ -48,4 +48,16 @@ class OilServiceTest extends \PHPUnit\Framework\TestCase
 
         $this->assertSame('test', $oilService->run('test'));
     }
+
+    public function test_single_pipe_can_run_again_after_its_stage_is_consumed()
+    {
+        $oilService = new \Oil\OilService(new \Oil\Patterns\SinglePipe());
+
+        $oilService->add(function ($payload) {
+            return $payload . '-processed';
+        });
+
+        $this->assertSame('test-processed', $oilService->run('test'));
+        $this->assertSame('test', $oilService->run('test'));
+    }
 }

@@ -34,6 +34,8 @@ $pipelineService->run('my payload');
 
 Stages are consumed by the next `run()` call. They are cleared whether the run
 returns successfully or throws, so add the stages again for each execution.
+Running a pipeline or single-pipe engine with no queued stage returns the input
+payload unchanged; an empty mediator run is a no-op.
 
 
 ```php
